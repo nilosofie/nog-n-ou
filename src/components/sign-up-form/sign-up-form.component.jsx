@@ -67,7 +67,7 @@ function SignUpForm() {
       <span>Sign up with your email and password</span>
       <form onSubmit={handleSubmit}>
         <FormInput
-          label="Display Name"
+          label="display name"
           type="text"
           required
           onChange={handleChange}
@@ -76,7 +76,7 @@ function SignUpForm() {
         />
 
         <FormInput
-          label="Email"
+          label="email"
           type="email"
           required
           onChange={handleChange}
@@ -85,7 +85,7 @@ function SignUpForm() {
         />
 
         <FormInput
-          label="Password"
+          label="password"
           type="password"
           required
           onChange={handleChange}
@@ -94,7 +94,7 @@ function SignUpForm() {
         />
 
         <FormInput
-          label="Confirm Password"
+          label="confirm password"
           type="password"
           required
           onChange={handleChange}
