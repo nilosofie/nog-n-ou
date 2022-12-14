@@ -11,7 +11,6 @@ import './sign-in-form.styles.scss';
 //firebase
 import {
   signInWithGooglePopup,
-  createUserDocumentFromAuth,
   signInAuthUserWithEmailAndPassword,
 } from '../../utils/firebase.utils';
 
