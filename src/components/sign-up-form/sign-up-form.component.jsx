@@ -41,6 +41,7 @@ function SignUpForm() {
         email,
         password
       );
+
       await createUserDocumentFromAuth(user, { displayName: displayName });
 
       await resetFormFields();
