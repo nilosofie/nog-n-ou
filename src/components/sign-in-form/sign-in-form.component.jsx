@@ -1,23 +1,23 @@
-import React from 'react';
-import { useState } from 'react';
+import React from "react";
+import { useState } from "react";
 
 //Components
-import FormInput from '../form-input/form-input.component';
-import Button from '../button/button.component';
+import FormInput from "../form-input/form-input.component";
+import Button, { BUTTON_TYPE_CLASSES } from "../button/button.component";
 
 //styles
-import './sign-in-form.styles.scss';
+import { SignInContainer, ButtonsContainer } from "./sign-in-form.styles.jsx";
 
 //firebase
 import {
   signInWithGooglePopup,
   signInAuthUserWithEmailAndPassword,
-} from '../../utils/firebase.utils';
+} from "../../utils/firebase.utils";
 
 //Global
 const defaultFormFields = {
-  email: '',
-  password: '',
+  email: "",
+  password: "",
 };
 
 //Component Function
@@ -43,11 +43,11 @@ function SignInForm() {
       resetFormFields();
     } catch (error) {
       switch (error.code) {
-        case 'auth/wrong-password':
-          alert('incorrect password for email');
+        case "auth/wrong-password":
+          alert("incorrect password for email");
           break;
-        case 'auth/user-not-found':
-          alert('no user associated with this email');
+        case "auth/user-not-found":
+          alert("no user associated with this email");
           break;
         default:
           console.log(error);
@@ -64,7 +64,7 @@ function SignInForm() {
   };
 
   return (
-    <div className="sign-in-container">
+    <SignInContainer>
       <h2>I already have an account</h2>
       <span>Sign in with your email and password</span>
       <form onSubmit={handleSubmit}>
@@ -84,14 +84,18 @@ function SignInForm() {
           name="password"
           value={password}
         />
-        <div className="buttons-container">
+        <ButtonsContainer>
           <Button type="submit">sign in</Button>
-          <Button type="button" onClick={signInWithGoogle} buttonType="google">
+          <Button
+            type="button"
+            onClick={signInWithGoogle}
+            buttonType={BUTTON_TYPE_CLASSES.google}
+          >
             google sign in
           </Button>
-        </div>
+        </ButtonsContainer>
       </form>
-    </div>
+    </SignInContainer>
   );
 }
 

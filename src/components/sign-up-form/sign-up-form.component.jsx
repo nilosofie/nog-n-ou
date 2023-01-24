@@ -1,22 +1,22 @@
-import React from 'react';
+import React from "react";
 
-import { useState } from 'react';
+import { useState } from "react";
 
-import FormInput from '../form-input/form-input.component';
-import Button from '../button/button.component';
+import FormInput from "../form-input/form-input.component";
+import Button from "../button/button.component";
 
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
-} from '../../utils/firebase.utils';
+} from "../../utils/firebase.utils";
 
-import './sign-up-form.styles.scss';
+import { SignUpContainer } from "./sign-up-form.styles.jsx";
 
 const defaultFormFields = {
-  displayName: '',
-  email: '',
-  password: '',
-  confirmPassword: '',
+  displayName: "",
+  email: "",
+  password: "",
+  confirmPassword: "",
 };
 
 function SignUpForm() {
@@ -29,10 +29,10 @@ function SignUpForm() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log('submitted success');
+    console.log("submitted success");
 
     if (password !== confirmPassword) {
-      alert('passwords do not match');
+      alert("passwords do not match");
       return;
     }
 
@@ -46,10 +46,10 @@ function SignUpForm() {
 
       await resetFormFields();
     } catch (error) {
-      if (error.code === 'auth/email-already-in-use') {
-        alert('Cannot create user, email already in use');
-      } else if (error.code === 'auth/weak-password') {
-        alert('Cannot create user, password needs to be at least 6 characters');
+      if (error.code === "auth/email-already-in-use") {
+        alert("Cannot create user, email already in use");
+      } else if (error.code === "auth/weak-password") {
+        alert("Cannot create user, password needs to be at least 6 characters");
       } else {
         console.log(error);
       }
@@ -63,7 +63,7 @@ function SignUpForm() {
   };
 
   return (
-    <div className="sign-up-container">
+    <SignUpContainer>
       <h2>Don't have an account?</h2>
       <span>Sign up with your email and password</span>
       <form onSubmit={handleSubmit}>
@@ -105,7 +105,7 @@ function SignUpForm() {
 
         <Button type="submit">Sign Up</Button>
       </form>
-    </div>
+    </SignUpContainer>
   );
 }
 
