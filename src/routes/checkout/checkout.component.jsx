@@ -3,6 +3,7 @@ import { useContext } from "react";
 import { CartContext } from "../../contexts/cart.context";
 
 import CheckoutItem from "../../components/checkout-item/checkout-item.component";
+import NavHead from "../../components/nav-head/nav-head.component";
 
 import {
   CheckoutContainer,
@@ -16,6 +17,7 @@ function Checkout() {
 
   return (
     <CheckoutContainer>
+      <NavHead val="checkout" back="/shop" />
       <CheckoutHeader>
         <HeaderBlock>
           <span>product</span>
@@ -36,7 +38,7 @@ function Checkout() {
       {cartItems.map((cartItem) => (
         <CheckoutItem key={cartItem.id} cartItem={cartItem} />
       ))}
-      <Total>total: ${cartTotal}</Total>
+      <Total>total: R{cartTotal}</Total>
     </CheckoutContainer>
   );
 }

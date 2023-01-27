@@ -5,33 +5,21 @@ import { DirectoryContainer } from "./directory.styles.jsx";
 const categories = [
   {
     id: 1,
-    title: "hats",
-    imageUrl: "https://i.ibb.co/cvpntL1/hats.png",
-    route: "shop/hats",
+    title: "shirts",
+    imageUrl: "https://i.ibb.co/ScHFfyM/cat-t.jpg",
+    route: "shop/shirts",
   },
   {
     id: 2,
-    title: "jackets",
-    imageUrl: "https://i.ibb.co/px2tCc3/jackets.png",
-    route: "shop/jackets",
+    title: "caps",
+    imageUrl: "https://i.ibb.co/tHgHLSL/cat-cap.jpg",
+    route: "shop/caps",
   },
   {
     id: 3,
-    title: "sneakers",
-    imageUrl: "https://i.ibb.co/0jqHpnp/sneakers.png",
-    route: "shop/sneakers",
-  },
-  {
-    id: 4,
-    title: "womens",
-    imageUrl: "https://i.ibb.co/GCCdy8t/womens.png",
-    route: "shop/womens",
-  },
-  {
-    id: 5,
-    title: "mens",
-    imageUrl: "https://i.ibb.co/R70vBrQ/men.png",
-    route: "shop/mens",
+    title: "sweaters",
+    imageUrl: "https://i.ibb.co/68J8mTZ/cat-hood.jpg",
+    route: "shop/sweaters",
   },
 ];
 

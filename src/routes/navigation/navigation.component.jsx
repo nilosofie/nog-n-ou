@@ -5,6 +5,7 @@ import {
   NavLink,
   NavLinks,
   LogoContainer,
+  MainLogo,
 } from "./navigation.styles.jsx";
 
 import CartIcon from "../../components/cart-icon/cart-icon.component";
@@ -13,7 +14,9 @@ import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component
 import { UserContext } from "../../contexts/users.context";
 import { CartContext } from "../../contexts/cart.context";
 
-import { ReactComponent as CrwnLogo } from "../../assets/crown.svg";
+//import { ReactComponent as CrwnLogo } from "../../assets/crown.svg";
+
+import mainLogo from "../../assets/lg nnno black full.png";
 
 import { signOutUser } from "../../utils/firebase.utils";
 
@@ -27,8 +30,12 @@ const Navigation = () => {
     <Fragment>
       <NavigationContainer>
         <LogoContainer to="/">
-          {<CrwnLogo className="logo" />}
-          {/*<img src={NNNO} className="logo" alt={`net nog 'n ou logo'`} />*/}
+          {/*<CrwnLogo className="logo" />*/}
+          <MainLogo
+            src={mainLogo}
+            className="logo"
+            alt={`net nog 'n ou logo`}
+          />
         </LogoContainer>
         <NavLinks>
           <NavLink to="/shop">shop</NavLink>

@@ -1,4 +1,9 @@
-import { CartItemContainer, ItemDetails, Name } from "./cart-item.styles.jsx";
+import {
+  CartItemContainer,
+  ItemDetails,
+  Name,
+  Price,
+} from "./cart-item.styles.jsx";
 
 function CartItem({ cartItem }) {
   const { name, imageUrl, price, quantity } = cartItem;
@@ -7,9 +12,9 @@ function CartItem({ cartItem }) {
       <img src={imageUrl} alt={`${name}`} />
       <ItemDetails>
         <Name>{name}</Name>
-        <span className="price">
-          {quantity} x ${price}
-        </span>
+        <Price>
+          {quantity} x R{price}
+        </Price>
       </ItemDetails>
     </CartItemContainer>
   );

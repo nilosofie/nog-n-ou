@@ -40,7 +40,7 @@ function CheckoutItem({ cartItem }) {
         <Value>{quantity}</Value>
         <Arrow onClick={addItemHandler}>&#10095;</Arrow>
       </Quantity>
-      <Price>${price}</Price>
+      <Price>R{price}</Price>
       <RemoveButton onClick={clearItemHandler}>&#10005;</RemoveButton>
     </CheckoutItemContainer>
   );

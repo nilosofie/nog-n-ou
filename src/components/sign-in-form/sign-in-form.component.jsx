@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
 //Components
@@ -25,9 +26,11 @@ const defaultFormFields = {
 function SignInForm() {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { email, password } = formFields;
+  const navigate = useNavigate();
 
   const signInWithGoogle = async () => {
     await signInWithGooglePopup();
+    navigate("/");
   };
 
   const resetFormFields = () => {
@@ -39,7 +42,7 @@ function SignInForm() {
     event.preventDefault();
     try {
       await signInAuthUserWithEmailAndPassword(email, password);
-
+      navigate("/");
       resetFormFields();
     } catch (error) {
       switch (error.code) {

@@ -4,8 +4,9 @@ import { useParams } from "react-router-dom";
 import { CategoriesContext } from "../../contexts/categories.context";
 
 import ProductCard from "../../components/product-card/product-card.component";
+import NavHead from "../../components/nav-head/nav-head.component";
 
-import { CategoryContainer, CategoryTitle } from "./category.styles.jsx";
+import { CategoryContainer } from "./category.styles.jsx";
 
 function Category() {
   const { category } = useParams();
@@ -18,7 +19,7 @@ function Category() {
 
   return (
     <Fragment>
-      <CategoryTitle>{category}</CategoryTitle>
+      <NavHead val={category} back="/shop" next="/checkout" />
       <CategoryContainer>
         {products &&
           products.map((product) => (

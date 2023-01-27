@@ -7,11 +7,12 @@ export const CategoryContainer = styled.div`
   row-gap: 50px;
 `;
 
-export const CategoryTitle = styled.h1`
-  font-size: 38px;
-  margin-bottom: 25px;
-  text-align: center;
-`;
+// export const CategoryTitle = styled.h1`
+//   font-size: 38px;
+//   margin-bottom: 25px;
+//   text-align: center;
+//   font-weight: 500;
+// `;
 
 // .category-container {
 

@@ -26,6 +26,10 @@ export const Name = styled.span`
   font-size: 16px;
 `;
 
+export const Price = styled.span`
+  text-transform: none;
+`;
+
 // .cart-item-container {
 
 //   img {

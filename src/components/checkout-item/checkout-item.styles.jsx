@@ -37,7 +37,7 @@ export const Quantity = styled.span`
 
 export const Price = styled.span`
   width: 23%;
-  text-transform: lowercase;
+  text-transform: none;
 `;
 
 export const Arrow = styled.div`
