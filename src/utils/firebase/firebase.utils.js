@@ -1,5 +1,5 @@
 // Import the functions you need from the SDKs you need
-import { initializeApp } from 'firebase/app';
+import { initializeApp } from "firebase/app";
 //import { getAnalytics } from 'firebase/analytics';
 import {
   getAuth,
@@ -9,7 +9,7 @@ import {
   signInWithEmailAndPassword,
   signOut,
   onAuthStateChanged,
-} from 'firebase/auth';
+} from "firebase/auth";
 
 import {
   getFirestore,
@@ -20,7 +20,7 @@ import {
   writeBatch,
   query,
   getDocs,
-} from 'firebase/firestore';
+} from "firebase/firestore";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -28,13 +28,13 @@ import {
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: 'AIzaSyAKapr_jsKirIqZiH2iYD6FH2UTsTmNnpc',
-  authDomain: 'nog-n-ou-db.firebaseapp.com',
-  projectId: 'nog-n-ou-db',
-  storageBucket: 'nog-n-ou-db.appspot.com',
-  messagingSenderId: '285897439110',
-  appId: '1:285897439110:web:47f809b9655bb0fe071e07',
-  measurementId: 'G-WNNFK5H284',
+  apiKey: "AIzaSyAKapr_jsKirIqZiH2iYD6FH2UTsTmNnpc",
+  authDomain: "nog-n-ou-db.firebaseapp.com",
+  projectId: "nog-n-ou-db",
+  storageBucket: "nog-n-ou-db.appspot.com",
+  messagingSenderId: "285897439110",
+  appId: "1:285897439110:web:47f809b9655bb0fe071e07",
+  measurementId: "G-WNNFK5H284",
 };
 
 // Initialize Firebase
@@ -43,7 +43,7 @@ const firebaseApp = initializeApp(firebaseConfig);
 
 const googleProvider = new GoogleAuthProvider();
 googleProvider.setCustomParameters({
-  prompt: 'select_account',
+  prompt: "select_account",
 });
 
 export const auth = getAuth();
@@ -65,22 +65,16 @@ export const addCollectionAndDocuments = async (
   });
 
   await batch.commit();
-  console.log('done');
+  console.log("done");
 };
 
 export const getCategoriesAndDocuments = async () => {
-  const collectionRef = collection(db, 'categories');
+  const collectionRef = collection(db, "categories");
   const q = query(collectionRef);
 
   const querySnapshot = await getDocs(q);
 
-  const categoryMap = querySnapshot.docs.reduce((acc, docSnapshot) => {
-    const { title, items } = docSnapshot.data();
-    acc[title.toLowerCase()] = items;
-    return acc;
-  }, {});
-
-  return categoryMap;
+  return querySnapshot.docs.map((docSnapshot) => docSnapshot.data());
 };
 
 export const createUserDocumentFromAuth = async (
@@ -89,7 +83,7 @@ export const createUserDocumentFromAuth = async (
 ) => {
   if (!userAuth) return;
 
-  const userDocRef = doc(db, 'users', userAuth.uid);
+  const userDocRef = doc(db, "users", userAuth.uid);
 
   const userSnapshot = await getDoc(userDocRef);
 
@@ -105,7 +99,7 @@ export const createUserDocumentFromAuth = async (
         ...additionalInformation,
       });
     } catch (error) {
-      console.log('error creating the user', error.message);
+      console.log("error creating the user", error.message);
     }
   }
 

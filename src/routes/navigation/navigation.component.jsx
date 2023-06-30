@@ -7,23 +7,24 @@ import {
   LogoContainer,
   MainLogo,
 } from "./navigation.styles.jsx";
+import { useSelector } from "react-redux";
 
 import CartIcon from "../../components/cart-icon/cart-icon.component";
 import CartDropdown from "../../components/cart-dropdown/cart-dropdown.component";
 
-import { UserContext } from "../../contexts/users.context";
 import { CartContext } from "../../contexts/cart.context";
+import { selectCurrentUser } from "../../store/user/user.selector.js";
 
 //import { ReactComponent as CrwnLogo } from "../../assets/crown.svg";
 
 import mainLogo from "../../assets/lg nnno black full.png";
 
-import { signOutUser } from "../../utils/firebase.utils";
+import { signOutUser } from "../../utils/firebase/firebase.utils";
 
 /*import NNNO from '../../assets/lg nnno black full.png';*/
 
 const Navigation = () => {
-  const { currentUser } = useContext(UserContext);
+  const currentUser = useSelector(selectCurrentUser);
   const { isCartOpen } = useContext(CartContext);
 
   return (

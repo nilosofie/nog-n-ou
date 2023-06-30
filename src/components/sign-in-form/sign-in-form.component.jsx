@@ -13,7 +13,7 @@ import { SignInContainer, ButtonsContainer } from "./sign-in-form.styles.jsx";
 import {
   signInWithGooglePopup,
   signInAuthUserWithEmailAndPassword,
-} from "../../utils/firebase.utils";
+} from "../../utils/firebase/firebase.utils";
 
 //Global
 const defaultFormFields = {
