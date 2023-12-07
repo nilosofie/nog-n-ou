@@ -18,7 +18,7 @@ function Shop() {
       dispatch(setCategories(categoriesArray));
     };
     getCategoriesMap();
-  }, []);
+  }, [dispatch]);
 
   return (
     <Routes>
